@@ -28,24 +28,19 @@ exports.run = async (bot, message, args) =>
     let chances = ["win", "lose"]
     var pick = chances[Math.floor(Math.random() * chances.length)];
 
-    const cs2 = bot.channels.get("740143248659578882");
-
 
     if(pick == "lose") {
         money[message.author.id].money -= bet;
         fs.writeFile("./money.json", JSON.stringify(money), (err) => {
             if(err) console.log(err);
         })
-        return cs2.send(`${message.author.toString()} vesztett! Új egyelege: ${money[message.author.id].money}`)
-        //return message.reply(`Te vesztettél! Új egyenleged: ${money[message.author.id].money}`)
+        return message.reply(`Te vesztettél! Új egyenleged: ${money[message.author.id].money}`)
     } else {
             money[message.author.id].money += bet;
             fs.writeFile("./money.json", JSON.stringify(money), (err) => {
                 if(err) console.log(err);
             })
-            
-            return cs2.send(`${message.author.toString()} Nyert! Új egyelege: ${money[message.author.id].money}`)
-            //return message.reply(`Te Nyertél! Új egyenleged: ${money[message.author.id].money}`)
+            return message.reply(`Te Nyertél! Új egyenleged: ${money[message.author.id].money}`)
     }
 
 }
