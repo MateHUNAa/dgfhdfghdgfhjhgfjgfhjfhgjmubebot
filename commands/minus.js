@@ -24,7 +24,7 @@ exports.run = async (bot, message, args) =>
         });
 
     }   else {
-        money[user.id].money += parseInt(args[1]);
+        money[user.id].money -= parseInt(args[1]);
 
         fs.writeFile("./money.json", JSON.stringify(money), (err) => {
             if(err) console.log(err)
@@ -37,6 +37,6 @@ exports.run = async (bot, message, args) =>
 }
 
 module.exports.help = {
-    name: "adminpay",
+    name: "adminapay",
     aliases: []
 }
