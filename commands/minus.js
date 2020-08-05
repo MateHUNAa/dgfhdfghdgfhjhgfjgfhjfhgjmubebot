@@ -32,7 +32,7 @@ exports.run = async (bot, message, args) =>
 
     }
 
-    return message.channel.send(`${message.author.username} admin utalás $${args[1]} neki: ${bot.users.get(user.id).username}`)
+    return message.channel.send(`Admin: ${message.author.username}  el vett töled: ${bot.users.get(user.id).username} Ennyi  pénzt: $${args[1]} !`)
 
 }
 
