@@ -9,7 +9,7 @@ exports.run = async (bot, message, args) =>
 
     if(!money[message.author.id] || money[message.author.id].money <= 0) return message.reply('Nem rendelkezel elég pénzzel!');
 
-    if(!args[0]) return message.reply('Kérlek ted meg tétjeid!')
+    if(!args[0]) return message.reply('Kérlek tedd meg tétjeid!')
 
     if(args[0].toLowerCase() == "all") args[0] = money[message.author.id].money;
 
