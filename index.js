@@ -8,7 +8,7 @@ var bot = new commando.Client ({
     unknownCommandResponse: false
 });
 //FILE SYSTEM
-bot.on('message', message => {
+bot.on('message', async message => {
 
 
     let prefixek = JSON.parse(fs.readFileSync("./prefixek.json", "utf8"));

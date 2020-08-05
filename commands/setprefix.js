@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 const fs = require('fs')
-const botconfig = require('../botconfig.json')
+const configs = require('../botconfig.json')
 const colors = require('../color.json')
 
-exports.run = async (bot, message, args, moment) =>
+exports.run = async (bot, message, args) =>
 { 
 
     let prefixek = JSON.parse(fs.readFileSync("./prefixek.json", "utf8"));
     if(!prefixek[message.guild.id]) {
         prefixek[message.guild.id] = {
-            prefix: botconfig.prefix
+            prefix: configs.prefix
         }
     }
     let prefix = prefixek[message.guild.id].prefix;
@@ -37,5 +37,5 @@ exports.run = async (bot, message, args, moment) =>
 
 module.exports.help = {
     name: "setprefix",
-    aliases: ["prefix"]
+    aliases: ["setp"]
 }
