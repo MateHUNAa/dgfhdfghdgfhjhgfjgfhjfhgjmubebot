@@ -20,7 +20,7 @@ if(!money[user.id]) {
     });
 }
 
-return message.channel.send(`${bot.users.get(user.id).username} nak van $${money[user.id].money} ja.`);
+return message.channel.send(`${bot.users.get(user.id).username} nak/nek $${money[user.id].money} ja.`);
 
 }
 

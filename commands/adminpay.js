@@ -11,8 +11,6 @@ exports.run = async (bot, message, args) =>
 
     if(!args[1]) return message.reply('Kérlek adj meg egy összeget!')
 
-    if(user.id === message.author.id) return message.reply('Nem utalhatsz magadnak pénzt')
-
     if(!money[user.id]) {
 
         money[user.id] = {
