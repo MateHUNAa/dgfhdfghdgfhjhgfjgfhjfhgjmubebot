@@ -10,7 +10,6 @@ exports.run = async (bot, message, args, moment) =>
     .setTitle('PARANCSOK')
     .addField('**?mb**', 'Játék')
     .addField('**?balance**', 'le írja mennyi pénzed van.')
-    .addField('**?pay**', 'Át tudsz utali pénzt!')
 message.channel.send(embed)
 }
 
